@@ -17,7 +17,7 @@ router.get("/public", (req, res) => {
   res.render("main", { currentUser: req.session.currentUser });
 });
 
-router.get("/private", (req, res) => {
+router.get("/private", isLoggedIn, (req, res) => {
   res.render("private", { currentUser: req.session.currentUser });
 });
 
