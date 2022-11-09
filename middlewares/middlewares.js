@@ -8,7 +8,7 @@ function exposeUserToView(req, res, next) {
 
 function isLoggedIn(req, res, next) {
   if (req.session.currentUser) {
-    next();
+    return next();
   }
   res.redirect("/auth/signup");
 }
